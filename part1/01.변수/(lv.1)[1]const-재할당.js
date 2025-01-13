@@ -8,6 +8,9 @@
 
 function reassignConst() {
   // TODO
+  const test= "재할당 할 수 없어"
+  test = 123
+  
 }
 
 // export 를 수정하지 마세요.
