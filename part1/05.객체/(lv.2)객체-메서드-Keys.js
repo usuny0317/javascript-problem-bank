@@ -10,6 +10,8 @@
  */
 function getObjectKeys(obj) {
   // TODO
+  let list1=Object.keys(obj)
+  return list1;
 }
 
 // export를 수정하지 마세요.

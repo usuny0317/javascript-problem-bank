@@ -10,6 +10,12 @@
  */
 function countProperties(obj) {
   // TODO
+  let count=0;
+  let list1= Object.keys(obj)
+  for(let i in list1){
+    count+=1
+  }
+  return count;
 }
 
 export { countProperties };
