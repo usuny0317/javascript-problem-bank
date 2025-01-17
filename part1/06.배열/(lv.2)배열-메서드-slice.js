@@ -14,6 +14,8 @@
  */
 function subArray(arr, start, end) {
   // TODO
+  let sarr=arr.slice(start,end)
+  return sarr
 }
 
 // export를 수정하지 마세요.
