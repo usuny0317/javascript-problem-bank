@@ -10,6 +10,9 @@
  */
 function getUniqueElements(arr) {
   // TODO: 중복을 제거한 새 배열을 반환하세요.
+  const set= new Set(arr)
+  const arr2 = [...set]
+  return arr2;
 }
 
 // export를 수정하지 마세요.

@@ -9,6 +9,10 @@
  */
 function rotateArray(arr) {
   // TODO: 원본을 변경하지 않고, 마지막 요소를 맨 앞으로 이동한 새 배열을 반환
+  let arr2=[...arr]
+  const last= arr2.pop()
+  arr2.unshift(last)
+  return arr2
 }
 
 // export를 수정하지 마세요.

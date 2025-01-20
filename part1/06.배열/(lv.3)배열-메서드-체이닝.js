@@ -16,6 +16,8 @@
 
 function get20sEmail(arr) {
   // TODO: 배열 메서드 체이닝을 사용해 20대 사람의 email 배열을 반환하세요.
+  
+
 }
 
 // export를 수정하지 마세요.
