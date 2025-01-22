@@ -27,8 +27,10 @@ export default {
     "\\.(css|less)$": "<rootDir>/__mocks__/fileMock.js",
   },
   testMatch: [
-    "<rootDir>/**/*.test.(js|jsx|ts|tsx)",
-    "<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))",
+  "<rootDir>/__test__do_not_edit/**/*.test.js",
+  "<rootDir>/part1/**/*.test.js",
+  "<rootDir>/part2/**/*.test.js"
+    
   ],
   transformIgnorePatterns: ["<rootDir>/node_modules/"],
 };
