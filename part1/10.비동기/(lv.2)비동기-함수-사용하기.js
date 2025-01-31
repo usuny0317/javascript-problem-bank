@@ -22,8 +22,11 @@
 
 // TODO: getUsers 함수를 작성하세요.
 async function getUsers(fetchUsers) {
-
-    
+  const mockdt = await fetchUsers();
+  const list_mo = mockdt.map((e) => {
+    return e.name;
+  });
+  return list_mo;
 }
 
 // export를 수정하지 마세요.
