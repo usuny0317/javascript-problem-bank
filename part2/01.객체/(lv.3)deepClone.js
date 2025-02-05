@@ -7,8 +7,13 @@
  * @param {*} obj - 복사할 대상
  * @returns {*} 깊은 복사된 결과
  */
-
-function deepClone(obj) {}
+const newobj = {};
+function deepClone(obj) {
+  for (let key in obj) {
+    newobj[key] = deepClone(obj[key]);
+  }
+  return newobj;
+}
 
 // export 를 수정하지 마세요.
 export { deepClone };
