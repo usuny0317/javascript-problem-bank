@@ -14,7 +14,26 @@
  * @returns {{ recordUserAction: Function, getUserActions: Function }}
  */
 
-function createUserLogger() {}
+function createUserLogger() {
+  const userLogs = new Map();
+
+  function recordUserAction(userId, action) {
+    if (!userLogs.has(userId)) {
+      userLogs.set(userId, new Set());
+    }
+    userLogs.get(userId).add(action);
+  }
+
+  function getUserActions(userId) {
+    if (!userLogs.has(userId)) {
+      return [];
+    } else {
+      return Array.from(userLogs.get(userId));
+    }
+  }
+
+  return { recordUserAction, getUserActions };
+}
 
 // export 를 수정하지 마세요.
 export { createUserLogger };
