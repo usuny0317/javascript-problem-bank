@@ -11,7 +11,24 @@
  */
 
 // TODO: 함수를 작성하세요.
-function getFrequency(arr) {}
+function getFrequency(arr) {
+  let name = [];
+  let num = [];
+  for (let i = 0; i < arr.length; i++) {
+    const hasnum = name.indexOf(arr[i]);
+    if (hasnum === -1) {
+      name.push(arr[i]);
+      num.push(1);
+    } else {
+      num[hasnum] = num[hasnum] + 1;
+    }
+  }
+  return Object.fromEntries(
+    name.map((na, index) => {
+      return [na, num[index]];
+    })
+  );
+}
 
 // export 를 수정하지 마세요.
 export { getFrequency };
