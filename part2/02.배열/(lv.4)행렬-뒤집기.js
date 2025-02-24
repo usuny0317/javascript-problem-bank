@@ -31,7 +31,30 @@
  */
 
 //TODO: 2차원 배열을 90도 회전한 새로운 배열을 반환하는 함수를 작성하세요.
-function rotateMatrix(matrix) {}
+function rotateMatrix(matrix) {
+  //0,0 > 0,2 // 0,1> 1,2 //0,2 > 2,0 // 1,0 > 0,1 // 1,1 > 1,1 // 1,2 > 2,1
+  // //matrix[i][j]는 rotated[j][n-1-i]
+
+  let n = matrix.length;
+  if (n === 0) {
+    return [];
+  }
+
+  //Array(n) : 길이가 n인 배열을 만듦 > [undefined, ... undefined] n개
+  //.fill(0) : 0으로 채움 > [0 , 0 ... , 0] n개
+  //Array.from({객체}) : 객체 기반 길이가 객체인 배열 만듦
+  //[0 , 0 ... , 0] 이거를 n개의 줄에 하나씩 넣음
+  //Array.from()이 map과 같은 역할을 한다
+  let newarr = Array.from({ length: n }, () => Array(n).fill(0));
+  //그 다음 자리를 바꾸자자
+  for (let i = 0; i < matrix[0].length; i++) {
+    for (let j = 0; j < matrix.length; j++) {
+      newarr[j][n - 1 - i] = matrix[i][j];
+    }
+  }
+
+  return newarr;
+}
 
 // export 를 수정하지 마세요.
 export { rotateMatrix };
