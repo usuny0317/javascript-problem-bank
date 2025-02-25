@@ -39,7 +39,6 @@ function rotateMatrix(matrix) {
   if (n === 0) {
     return [];
   }
-
   //Array(n) : 길이가 n인 배열을 만듦 > [undefined, ... undefined] n개
   //.fill(0) : 0으로 채움 > [0 , 0 ... , 0] n개
   //Array.from({객체}) : 객체 기반 길이가 객체인 배열 만듦

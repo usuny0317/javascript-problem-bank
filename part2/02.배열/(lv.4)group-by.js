@@ -28,7 +28,24 @@
  */
 
 // TODO: groupBy 함수를 작성하세요.
-function groupBy(arr, key) {}
+function groupBy(arr, key) {
+  //reduce함수 사용 필수!!
+  //"key"로 받아오는 값의 벨류 값을 기준으로 나눔.
+  // 배열을 돌면서 각 요소 (reduce item)에서 나오는 객체의 키 값의 벨류를 키로 두고 배열로 푸시
+  // acc 누적될 장소, arr에서 item 한 줄 씩씩 가져옴
+  return arr.reduce((acc, item) => {
+    let groupKey = item[key]; // 동적으로 key 값 가져오기
+
+    if (!acc[groupKey]) {
+      //없으면 새로 만들어 줌
+      acc[groupKey] = [];
+    }
+
+    acc[groupKey].push(item); // 해당 그룹에 아이템 추가
+
+    return acc; // 누적 객체 반환
+  }, {}); // 초기값은 빈 객체
+}
 
 // export를 수정하지 마세요.
 export { groupBy };
